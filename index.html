@@ -83,21 +83,18 @@
   <script>
     const papers = Array.from(document.querySelectorAll('.paper'));
 
-    // One by one show animation
     function showPapersSequentially() {
       papers.forEach((paper, index) => {
         setTimeout(() => {
           paper.classList.add('show');
-        }, index * 500); // delay each paper
+        }, index * 500);
       });
     }
 
-    // Wait a bit and then show
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(showPapersSequentially, 500);
     });
 
-    // Random music player (on user interaction)
     const musicFiles = [
       './music/blue.mp3',
       './music/Kalank.mp3',
@@ -116,7 +113,6 @@
     document.addEventListener('click', playRandomMusic, { once: true });
     document.addEventListener('touchstart', playRandomMusic, { once: true });
 
-    // Detect mobile and load correct script
     function isMobile() {
       return /Mobi|Android|iPhone|iPad|iPod|IEMobile|BlackBerry|Windows Phone/i.test(navigator.userAgent);
     }

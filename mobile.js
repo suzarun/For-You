@@ -49,6 +49,7 @@ class Paper {
         this.prevTouchX = this.touchMoveX;
         this.prevTouchY = this.touchMoveY;
 
+        paper.style.transition = "none";
         paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
       }
     });
@@ -70,7 +71,6 @@ class Paper {
       this.rotating = false;
     });
 
-    // For two-finger rotation on touch screens
     paper.addEventListener("gesturestart", (e) => {
       e.preventDefault();
       this.rotating = true;
@@ -80,8 +80,6 @@ class Paper {
     });
   }
 }
-
-// const papers = Array.from(document.querySelectorAll(".paper"));
 
 papers.forEach((paper) => {
   const p = new Paper();

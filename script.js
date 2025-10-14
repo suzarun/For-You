@@ -17,16 +17,14 @@ class Paper {
   lastMoveTime = 0;
 
   init(paper) {
-    // Add 'will-change' CSS to optimize the element for movement
     paper.style.willChange = "transform";
 
-    const THROTTLE_DELAY = 10; // ms (adjust as necessary)
+    const THROTTLE_DELAY = 10;
 
-    // Throttle the mousemove events for smoother dragging
     document.addEventListener("mousemove", (e) => {
       const currentTime = Date.now();
       if (currentTime - this.lastMoveTime < THROTTLE_DELAY) {
-        return; // Skip if the event fires too frequently
+        return;
       }
       this.lastMoveTime = currentTime;
 
@@ -70,8 +68,6 @@ class Paper {
     });
   }
 }
-
-// const papers = Array.from(document.querySelectorAll(".paper"));
 
 papers.forEach((paper) => {
   const p = new Paper();

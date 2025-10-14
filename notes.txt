@@ -1,0 +1,6 @@
+git config user.name = ""
+git config user.email = ""
+
+enter windows key and search windows credentials open credentials delete github credentials
+
+when pushing it will ask which acc you wanna use 
