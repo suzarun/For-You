@@ -52,18 +52,18 @@
   <div class="paper image">
     <p> and I fallen in</p>
     <p>Love with You 😍 </p>
-    <img src="./images/1.jpeg" alt="you" />
+    <img src="./images/image1.jpg" alt="you" />
   </div>
 
   <div class="paper image">
     <p>Look at this memory</p>
-    <img src="./images/2.jpeg" alt="you" />
+    <img src="./images/image2.jpg" alt="you" />
   </div>
 
   <div class="paper image">
     <p>How can someone</p>
     <p>be so cute ❤️</p>
-    <img src="./images/3.jpg" alt="you" />
+    <img src="./images/image3.jpg" alt="you" />
   </div>
 
   <div class="paper red">
@@ -99,9 +99,10 @@
 
     // Random music player (on user interaction)
     const musicFiles = [
-      './music/song1.mp3',
-      './music/song2.mp3',
-      './music/song3.mp3'
+      './music/blue.mp3',
+      './music/Kalank.mp3',
+      './music/Shayad.mp3',
+      './music/VE-KAMLEYA.mp3'
     ];
 
     function playRandomMusic() {
@@ -112,8 +113,8 @@
       document.removeEventListener('touchstart', playRandomMusic);
     }
 
-    // document.addEventListener('click', playRandomMusic, { once: true });
-    // document.addEventListener('touchstart', playRandomMusic, { once: true });
+    document.addEventListener('click', playRandomMusic, { once: true });
+    document.addEventListener('touchstart', playRandomMusic, { once: true });
 
     // Detect mobile and load correct script
     function isMobile() {

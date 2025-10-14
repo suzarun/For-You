@@ -46,6 +46,7 @@ class Paper {
         this.prevMouseX = this.mouseX;
         this.prevMouseY = this.mouseY;
 
+        paper.style.transition = "none";
         paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
       }
     });
