@@ -43,7 +43,52 @@
         opacity: 1;
       }
     }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .paper.heart.clicked {
+      background: linear-gradient(45deg, #ff0044, #ff8c00);
+      box-shadow: 0 0 10px 5px rgba(255, 105, 180, 0.8);
+    }
+
+    .paper.heart.newBg {
+      background-image: url("./images/image1.jpg");
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .bodyNewBg {
+      background-image: url("./images/bg1.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .paper.bodyNewBg {
+      background-position: left;
+    }
+
+    .cardNewBg {
+      background-image: url("./images/bg2.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
 </head>
 
 <body>
@@ -82,6 +127,38 @@
 
   <script>
     const papers = Array.from(document.querySelectorAll('.paper'));
+    let bg;
+
+    const heart = document.querySelector('.paper.heart');
+    heart.addEventListener('click', () => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 0.5, y: 0.5 }
+      });
+
+      heart.classList.toggle('clicked');
+      if (heart.classList.contains("clicked")) {
+        heart.classList.remove("newBg");
+        document.body.classList.remove(bg);
+        papers.forEach(paper => {
+          paper.classList.remove(bg);
+        });
+      } else {
+        heart.classList.add("newBg");
+        document.body.classList.add(bg);
+        papers.forEach(paper => {
+          paper.classList.add(bg);
+        });
+      }
+
+      heart.innerHTML = '<p style="font-size: 40px; color: red; text-align: center;">I ❤️ YOU</p>';
+      heart.style.transition = 'all 0.5s ease';
+      heart.style.transform = 'scale(1)';
+      heart.style.backgroundColor = 'transparent';
+      heart.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.8)';
+
+    });
 
     function showPapersSequentially() {
       papers.forEach((paper, index) => {
@@ -93,6 +170,7 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(showPapersSequentially, 500);
+      bg = isMobile() ? "bodyNewBg" : "bodyNewBg";
     });
 
     const musicFiles = [
