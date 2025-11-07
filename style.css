@@ -6,13 +6,13 @@ body {
   align-items: center;
   justify-content: center;
   background-size: 1000px;
-  background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+  background-image: url("./images/bg-body.jpg");
   background-position: center center;
   overflow: hidden;
 }
 
 .paper {
-  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+  background-image: url("./images/bg-body.jpg");
   background-size: 500px;
   background-position: center center;
   padding: 20px 100px;
